@@ -15,7 +15,7 @@
                         href="https://learnwithnewt.wordpress.com/">https://learnwithnewt.wordpress.com/</a></p>
                 <p>💬 Ask me about <strong>Azure, MuleSoft, Azure OpenAI, Azure Integrations</strong></p>
                 <h2>📚 Portfolio </h2>
-                    <p><a href="https://promptgen.streamlit.app/">Prompt Collector App & More</a></p>
+                    <p><a href="https://toolsetapp.streamlit.app/">Prompt Collector App & More</a></p>
                     <p><a href="https://advice-reactapp.netlify.app/">Simple Quote Generator React App</a></p>
                     <p><a href="https://github.com/marketplace/actions/podcast-generator-workflow">Podcast Generator Workflow</a></p>
                 <h2>🏆 Certifications</h2>
