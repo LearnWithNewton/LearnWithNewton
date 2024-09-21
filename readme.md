@@ -11,8 +11,8 @@
                         Diffusion</strong></p>
                 <p>👨‍💻 All of my projects are available at <a
                         href="https://github.com/learnwithnewton">https://github.com/learnwithnewton</a></p>
-                <p>📝 I regularly write articles on <a
-                        href="https://learnwithnewt.wordpress.com/">https://learnwithnewt.wordpress.com/</a></p>
+                <p>📝 I regularly post learning videos on <a
+                        href="https://www.youtube.com/@LearnWithNewton" >https://www.youtube.com/@LearnWithNewton</a></p>
                 <p>💬 Ask me about <strong>Azure, MuleSoft, Azure OpenAI, Azure Integrations</strong></p>
                 <h2>📚 Portfolio </h2>
                     <p><a href="https://toolsetapp.streamlit.app/">Prompt Collector App & More</a></p>
