@@ -34,16 +34,16 @@
                     <a href="https://www.credly.com/badges/b704f9a0-ca3d-44b3-89c3-80ea6e56c80c">Microsoft
                             Certified: Azure Fundamentals</a><br>
                 <h2>🔗 Social Links</h2>
-                    <a href="https://LearnWithNewton.wordpress.com">🌐 Blog</a> | 
-                    <a href="https://www.whatsapp.com/channel/0029Va9ncUACcW4qjV7WSp09">📱 WhatsApp</a> | 
+                    <a href="https://LearnWithNewton.wordpress.com" target="_blank">🌐 Blog</a> | 
+                    <a href="https://whatsapp.com/channel/0029Vag09xYJP20yz2wkN61X" target="_blank">📱 WhatsApp</a> | 
                     <a href="https://www.linkedin.com/in/sarfarazit08/" target="_blank">🧑🏽‍🔬 LinkedIn</a> | 
                     <a href="https://www.youtube.com/@LearnWithNewton" target="_blank">▶️ YouTube</a> | 
                     <a href="https://learn.microsoft.com/en-us/users/sarfarazit08" target="_blank">🪟 Microsoft </a> |
                     <a href="mailto:sarfarazit08@gmail.com">📧 Gmail</a> <br>
-                    <a href="https://www.instagram.com/LearnWithNewton/">📷 Instagram</a> | 
-                    <a href="https://twitter.com/LearnWithNewton/">🐦 Twitter</a> | 
-                    <a href="https://pinterest.com/LearnWithNewton/">📌 Pinterest</a> | 
-                    <a href="https://www.facebook.com/LearnWithNewton">📘 Facebook</a> | 
+                    <a href="https://www.instagram.com/LearnWithNewton/" target="_blank">📷 Instagram</a> | 
+                    <a href="https://twitter.com/LearnWithNewton/" target="_blank">🐦 Twitter</a> | 
+                    <a href="https://pinterest.com/LearnWithNewton/" target="_blank">📌 Pinterest</a> | 
+                    <a href="https://www.facebook.com/LearnWithNewton" target="_blank">📘 Facebook</a> | 
                     <a href="https://soundcloud.com/sarfarazit08">🎵 SoundCloud</a> | 
                 <h2>📊 GitHub Stats</h2>
                 <img src="https://github-readme-streak-stats.herokuapp.com/?user=learnwithnewton&theme=dark&hide_border=false"
