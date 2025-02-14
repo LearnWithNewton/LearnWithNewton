@@ -12,28 +12,30 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 document.getElementById('qr-input').addEventListener('input', generateQRCode);
 
-function updateTime() {
-    const now = new Date();
-    const options = { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-    document.getElementById('time-ist').innerText = now.toLocaleTimeString('en-US', options);
+document.addEventListener('DOMContentLoaded', function() {
+    function showTime(region) {
+        const regions = ['IST', 'UK', 'AUS'];
+        regions.forEach(r => {
+            document.getElementById(`time-${r.toLowerCase()}`).style.display = (r === region) ? 'block' : 'none';
+        });
+    }
 
-    options.timeZone = 'Europe/London';
-    document.getElementById('time-uk').innerText = now.toLocaleTimeString('en-US', options);
+    function updateTime() {
+        const now = new Date();
+        const options = { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        document.getElementById('time-ist').innerText = now.toLocaleTimeString('en-US', options);
 
-    options.timeZone = 'Australia/Sydney';
-    document.getElementById('time-aus').innerText = now.toLocaleTimeString('en-US', options);
-}
+        options.timeZone = 'Europe/London';
+        document.getElementById('time-uk').innerText = now.toLocaleTimeString('en-US', options);
 
-function showTime(region) {
-    const regions = ['IST', 'UK', 'AUS'];
-    regions.forEach(r => {
-        document.getElementById(`time-${r.toLowerCase()}`).style.display = (r === region) ? 'block' : 'none';
-    });
-}
+        options.timeZone = 'Australia/Sydney';
+        document.getElementById('time-aus').innerText = now.toLocaleTimeString('en-US', options);
+    }
 
-// Initialize the time display
-updateTime();
-setInterval(updateTime, 1000);
+    // Initialize the time display
+    updateTime();
+    setInterval(updateTime, 1000);
+});
 
 function generateQRCode() {
 	const qrInput = document.getElementById('qr-input').value;
