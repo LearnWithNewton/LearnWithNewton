@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Utility App</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Utility App</h1>
+        <div class="row">
+            <nav class="col-md-3 sidebar">
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link active" href="#qr-code"><i class="fas fa-qrcode"></i>Text to QR Code</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#base64"><i class="fas fa-code"></i>Base64 Encode/Decode</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hash-generator"><i class="fas fa-lock"></i>Hash Generator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ssh-key-generator"><i class="fas fa-key"></i>SSH Key Generator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#markdown"><i class="fas fa-file-pdf"></i>Markdown to PDF</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#json-xml"><i class="fas fa-exchange-alt"></i>JSON/XML Converter</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#jwt"><i class="fas fa-key"></i>JWT Decoder</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#json-viewer"><i class="fas fa-sitemap"></i>JSON Structure Viewer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#color-picker"><i class="fas fa-palette"></i>Color Picker</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about"><i class="fas fa-info-circle"></i>About</a></li>
+                </ul>
+            </nav>
+            <main class="col-md-9">
+				<div id="qr-code" class="tab-content active">
+					<h2>Text to QR Code</h2>
+					<div class="row">
+						<div class="col-md-6">
+							<textarea id="qr-input" class="form-control" placeholder="Enter text"></textarea>
+						</div>
+						<div class="col-md-6">
+							<div id="qr-result"></div>
+						</div>
+					</div>
+				</div>
+				<div id="base64" class="tab-content">
+					<h2>Base64 Encode/Decode</h2>
+					<textarea id="base64-input" class="form-control" placeholder="Enter text to encode/decode"></textarea>
+					<button class="btn btn-primary my-2" onclick="base64Encode()">Encode</button>
+					<button class="btn btn-secondary my-2" onclick="base64Decode()">Decode</button>
+					<div id="base64-result" style="white-space: pre-wrap;"></div>
+					<button class="btn btn-success my-3" onclick="copyToClipboard()">Copy to Clipboard</button>
+					<span id="copy-message" style="margin-left: 10px;"></span>
+				</div>
+                <div id="hash-generator" class="tab-content">
+                    <h2>Hash Generator</h2>
+                    <textarea id="hash-input" class="form-control" placeholder="Enter text to hash"></textarea>
+                    <select id="hash-algorithm" class="form-control my-2">
+                        <option value="MD5">MD5</option>
+                        <option value="SHA-1">SHA-1</option>
+                        <option value="SHA-256">SHA-256</option>
+                        <option value="SHA-512">SHA-512</option>            
+                    </select>
+                    <button class="btn btn-primary my-2" onclick="generateHash()">Generate Hash</button>
+                    <div id="hash-result" class="my-2" style="white-space: pre-wrap;"></div>
+                    <button class="btn btn-success my-3" onclick="copyHashToClipboard()">Copy to Clipboard</button>
+                    <span id="hash-copy-message" style="margin-left: 10px;"></span>
+                </div>
+                <div id="ssh-key-generator" class="tab-content">
+                    <h2>SSH Key Pair Generator</h2>
+                    <textarea id="ssh-key-input" class="form-control" placeholder="Enter text for key generation"></textarea>
+                    <select id="ssh-algorithm" class="form-control my-2">
+                        <option value="RSA">RSA</option>
+                        <option value="RSA-SSH2">RSA SSH-2</option>
+                        <option value="DSA">DSA</option>
+                        <option value="ECDSA">ECDSA</option>
+                        <option value="ED25519">ED25519</option>
+                    </select>
+                    <select id="ssh-bit-size" class="form-control my-2">
+                        <option value="2048">2048</option>
+                        <option value="4096">4096</option>
+                    </select>
+                    <button class="btn btn-primary my-2" onclick="generateSSHKeyPair()">Generate Key Pair</button>
+                    <div id="ssh-public-key-result" class="my-2" style="white-space: pre-wrap;"></div>
+                    <button class="btn btn-success my-3" onclick="copyToClipboard('ssh-public-key-result')">Copy Public Key</button>
+                    <button class="btn btn-success my-3" onclick="downloadKey('ssh-public-key-result', 'public_key.pub')">Download Public Key</button>
+                    <div id="ssh-private-key-result" class="my-2" style="white-space: pre-wrap;"></div>
+                    <button class="btn btn-success my-3" onclick="copyToClipboard('ssh-private-key-result')">Copy Private Key</button>
+                    <button class="btn btn-success my-3" onclick="downloadKey('ssh-private-key-result', 'private_key')">Download Private Key</button>
+                </div>
+                <div id="markdown" class="tab-content">
+                    <h2>Markdown to PDF Converter</h2>
+                    <textarea id="markdown-input" class="form-control" placeholder="Enter Markdown text"></textarea>
+                    <button class="btn btn-primary my-2" onclick="convertMarkdownToPDF()">Convert to PDF</button>
+                    <div id="markdown-result"></div>
+                </div>
+
+                <div id="json-xml" class="tab-content">
+                    <h2>JSON to XML Converter</h2>
+                    <textarea id="json-input" class="form-control" placeholder="Enter JSON"></textarea>
+                    <button class="btn btn-primary my-2" onclick="convertJSONToXML()">Convert to XML</button>
+					<div id="json-xml-result" style="white-space: pre-wrap;"></div>
+					<button class="btn btn-success my-3" onclick="copyToClipboard()">Copy to Clipboard</button>
+					<span id="copy-message" style="margin-left: 10px;"></span>
+                    <!-- <div id="json-xml-result"></div> -->
+                </div>
+
+                <div id="jwt" class="tab-content">
+                    <h2>JWT Decoder</h2>
+                    <input type="text" id="jwt-input" class="form-control" placeholder="Enter JWT">
+                    <button class="btn btn-primary my-2" onclick="decodeJWT()">Decode JWT</button>
+                    <div id="jwt-result"></div>
+                </div>
+
+                <div id="json-viewer" class="tab-content">
+                    <h2>JSON Structure Viewer</h2>
+                    <textarea id="json-viewer-input" class="form-control" placeholder="Enter JSON"></textarea>
+                    <button class="btn btn-primary my-2" onclick="viewJSONStructure()">View Structure</button>
+                    <div id="json-viewer-result" class="json-viewer-result"></div>
+                </div>
+
+                <div id="color-picker" class="tab-content">
+                    <h2>Color Picker</h2>
+                    <input type="color" id="color-input" class="form-control my-2">
+                    <button class="btn btn-primary my-2" onclick="copyColorCode('hex')">Copy HEX</button>
+                    <button class="btn btn-secondary my-2" onclick="copyColorCode('rgb')">Copy RGB</button>
+                    <div id="color-result" class="my-2"></div>
+                    <h3>RGB to HEX Converter</h3>
+                    <input type="text" id="rgb-input" class="form-control my-2" placeholder="Enter RGB (e.g., rgb(255, 0, 0))">
+                    <button class="btn btn-primary my-2" onclick="convertRGBToHex()">Convert to HEX</button>
+                    <div id="rgb-to-hex-result" class="my-2"></div>
+                    <h3>HEX to RGB Converter</h3>
+                    <input type="text" id="hex-input" class="form-control my-2" placeholder="Enter HEX (e.g., #ff0000)">
+                    <button class="btn btn-primary my-2" onclick="convertHexToRGB()">Convert to RGB</button>
+                    <div id="hex-to-rgb-result" class="my-2"></div>
+                </div>
+
+                <div id="about" class="tab-content">
+                    <h2>About</h2>
+                    <p>This Utility App provides various tools for:</p>
+                    <ul>
+                        <li><a class="nav-link" href="#qr-code"><i class="fas fa-qrcode"></i> Text to QR Code</a></li>
+                        <li><a class="nav-link" href="#base64"><i class="fas fa-code"></i> Base64 Encode/Decode</a></li>
+                        <li><a class="nav-link" href="#markdown"><i class="fas fa-file-pdf"></i> Markdown to PDF</a></li>
+                        <li><a class="nav-link" href="#json-xml"><i class="fas fa-exchange-alt"></i> JSON/XML Converter</a></li>
+                        <li><a class="nav-link" href="#jwt"><i class="fas fa-key"></i> JWT Decoder</a></li>
+                        <li><a class="nav-link" href="#json-viewer"><i class="fas fa-sitemap"></i> JSON Structure Viewer</a></li>
+                        <li><a class="nav-link" href="#color-picker"><i class="fas fa-palette"></i> Color Picker</a></li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.4/purify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.1.3/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.10.0/forge.min.js"></script>
+    <script src="./js/script.js"></script>
+
+</body>
+</html>

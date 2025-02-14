@@ -1,0 +1,173 @@
+body {
+    background-color: #2d2d2d;
+    color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#qr-result img {
+    margin-top: 10px;
+    border: 2px solid #f8f9fa;
+    border-radius: 8px;
+}
+
+.nav-link {
+    color: #f8f9fa;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #e0e0e0;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+.nav-link i {
+    margin-right: 8px;
+}
+
+.btn-primary {
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+    color: #343a40;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e0e0e0;
+    border-color: #e0e0e0;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #f8f9fa;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.json-viewer-result {
+    white-space: pre-wrap;
+    font-family: monospace;
+    background-color: #2d2d2d;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: auto;
+    max-height: 400px;
+    border: 1px solid #f8f9fa;
+}
+
+.json-viewer-result .json-key {
+    color: #f8f9fa;
+}
+
+.json-viewer-result .json-value {
+    color: #f8f9fa;
+}
+
+.json-viewer-result .json-string {
+    color: #f8f9fa;
+}
+
+.json-viewer-result .json-number {
+    color: #f8f9fa;
+}
+
+.json-viewer-result .json-boolean {
+    color: #f8f9fa;
+}
+
+.json-viewer-result .json-null {
+    color: #f8f9fa;
+}
+
+.json-viewer-result .json-toggle {
+    cursor: pointer;
+    color: #f8f9fa;
+}
+
+.vertical-separator {
+    border-left: 1px solid #6c757d;
+    height: 100%;
+    position: absolute;
+    left: 25%;
+    top: 0;
+}
+
+.container {
+    
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #2d2d2d;
+    position: relative;
+}
+
+h1, h2, h3 {
+    color: #f8f9fa;
+    text-shadow: 1px 1px 2px #000;
+}
+
+input, textarea {
+    background-color: #2d2d2d;
+    color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #f8f9fa;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #e0e0e0;
+    box-shadow: 0 0 5px #e0e0e0;
+}
+
+#hash-result {
+    background-color: #2d2d2d;
+    color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+    overflow: auto;
+    max-height: 200px;
+}
+
+#ssh-public-key-result, #ssh-private-key-result {
+    background-color: #2d2d2d;
+    color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+    overflow: auto;
+    max-height: 200px;
+}
