@@ -1,3 +1,15 @@
+.flag-icon {
+    width: 20px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+#time-ist, #time-uk, #time-aus {
+    font-size: 1.5rem;
+    color: #f8f9fa;
+    margin-top: 10px;
+}
+
 body {
     background-color: #2d2d2d;
     color: #f8f9fa;

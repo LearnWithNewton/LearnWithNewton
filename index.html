@@ -11,6 +11,25 @@
 <body>
     <div class="container">
         <h1 class="text-center my-4">Utility App</h1>
+        <div class="text-center my-4">
+            <button class="btn btn-primary" onclick="showTime('IST')"><img src="path/to/india-flag.png" alt="India Flag" class="flag-icon"> IST</button>
+            <button class="btn btn-primary" onclick="showTime('UK')"><img src="path/to/uk-flag.png" alt="UK Flag" class="flag-icon"> UK</button>
+            <button class="btn btn-primary" onclick="showTime('AUS')"><img src="path/to/aus-flag.png" alt="Australia Flag" class="flag-icon"> AUS</button>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h3>IST</h3>
+                <div id="time-ist"></div>
+            </div>
+            <div class="col-md-4">
+                <h3>UK</h3>
+                <div id="time-uk"></div>
+            </div>
+            <div class="col-md-4">
+                <h3>AUS</h3>
+                <div id="time-aus"></div>
+            </div>
+        </div>
         <div class="row">
             <nav class="col-md-3 sidebar">
                 <ul class="nav flex-column">
