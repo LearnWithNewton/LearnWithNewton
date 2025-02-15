@@ -10,26 +10,22 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center my-4">Utility App</h1>
+        <h1 class="text-center my-4">Utility</h1>
         <div class="text-center my-4">
-            <button class="btn btn-primary" onclick="showTime('IST')">🇮🇳 IN</button>
-            <button class="btn btn-primary" onclick="showTime('UK')">🇬🇧 UK</button>
-            <button class="btn btn-primary" onclick="showTime('AUS')">🇦🇺 AUS</button>
-        </div>
-        <div class="row text-center">
-            <div class="col-md-4">
-                <h3>IST</h3>
-                <div id="time-ist"></div>
+            <div class="d-inline-block p-2 border border-warning text-white rounded">
+                <span>🇮🇳 IN</span><br>
+                <span id="time-ist"></span>
             </div>
-            <div class="col-md-4">
-                <h3>UK</h3>
-                <div id="time-uk"></div>
+            <div class="d-inline-block p-2 border border-warning text-white rounded">
+                <span>🇬🇧 UK</span><br>
+                <span id="time-uk"></span>
             </div>
-            <div class="col-md-4">
-                <h3>AUS</h3>
-                <div id="time-aus"></div>
+            <div class="d-inline-block p-2 border border-warning text-white rounded">
+                <span>🇦🇺 AUS</span><br>
+                <span id="time-aus"></span>
             </div>
         </div>
+        
         <div class="row">
             <nav class="col-md-3 sidebar">
                 <ul class="nav flex-column">
@@ -51,7 +47,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <textarea id="qr-input" class="form-control" placeholder="Enter text"></textarea>
-                            <input type="file" id="qr-file-input" class="form-control my-2" accept="image/*">
+                            <!-- <input type="file" id="qr-file-input" class="form-control my-2" accept="image/*"> -->
                         </div>
                         <div class="col-md-6">
                             <div id="qr-result"></div>

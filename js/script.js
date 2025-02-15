@@ -12,12 +12,12 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    function showTime(region) {
-        const regions = ['IST', 'UK', 'AUS'];
-        regions.forEach(r => {
-            document.getElementById(`time-${r.toLowerCase()}`).style.display = (r === region) ? 'block' : 'none';
-        });
-    }
+    // function showTime(region) {
+    //     const regions = ['IST', 'UK', 'AUS'];
+    //     regions.forEach(r => {
+    //         document.getElementById(`time-${r.toLowerCase()}`).style.display = (r === region) ? 'block' : 'none';
+    //     });
+    // }
 
     function updateTime() {
         const now = new Date();
