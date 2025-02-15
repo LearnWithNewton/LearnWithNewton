@@ -10,7 +10,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-document.getElementById('qr-input').addEventListener('input', generateQRCode);
 
 document.addEventListener('DOMContentLoaded', function() {
     function showTime(region) {
@@ -37,14 +36,16 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateTime, 1000);
 });
 
+document.getElementById('qr-input').addEventListener('input', generateQRCode);
+
 function generateQRCode() {
 	const qrInput = document.getElementById('qr-input').value;
 	const qrResult = document.getElementById('qr-result');
 	qrResult.innerHTML = '';
 	new QRCode(qrResult, {
 		text: qrInput,
-		width: 512,
-		height: 512,
+		width: 256,
+		height: 256,
 	});
 }
 
