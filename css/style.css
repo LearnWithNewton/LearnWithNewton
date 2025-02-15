@@ -6,6 +6,12 @@ body {
     background-color: #1a1a1a;
     color: #f8f9fa;
     font-family: var(--main-font);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.day-mode {
+    background-color: #f8f9fa;
+    color: #1a1a1a;
 }
 
 .nav-link {
@@ -19,6 +25,15 @@ body {
 .nav-link.active {
     color: #ff4d4d;
     font-weight: bold;
+}
+
+body.day-mode .nav-link {
+    color: #1a1a1a; /* Set the text color to dark in day mode */
+}
+
+body.day-mode .nav-link:hover,
+body.day-mode .nav-link.active {
+    color: #e60000; /* Keep the hover/active color consistent */
 }
 
 .btn-primary {
@@ -64,8 +79,23 @@ body {
     padding: 10px; /* Add some padding */
     border-radius: 5px; /* Optional: round the corners */
     margin-top: 5px; /* Add some margin */
+    transition: border-color 0.3s;
+}
+
+body.day-mode [id$="-result"] {
+    border-color: #6c757d;
 }
 
 #ssh-key-generator .d-flex button {
     display: none;
+}
+
+body.day-mode #time-ist,
+body.day-mode #time-uk,
+body.day-mode #time-aus {
+    color: #1a1a1a; /* Set the text color to dark in day mode */
+}
+
+body.day-mode .d-inline-block.p-2.border.border-danger.text-white.rounded.mx-2 span {
+    color: #1a1a1a; /* Set the text color to dark in day mode */
 }

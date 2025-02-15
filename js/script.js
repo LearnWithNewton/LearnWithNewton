@@ -77,31 +77,31 @@ function generateQRCode() {
 	});
 }
 
-document.getElementById('qr-file-input').addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const img = new Image();
-            img.onload = function() {
-                const canvas = document.createElement('canvas');
-                const context = canvas.getContext('2d');
-                canvas.width = img.width;
-                canvas.height = img.height;
-                context.drawImage(img, 0, 0, img.width, img.height);
-                const imageData = context.getImageData(0, 0, img.width, img.height);
-                const code = jsQR(imageData.data, imageData.width, imageData.height);
-                if (code) {
-                    document.getElementById('qr-decoded-result').innerText = `Decoded Text: ${code.data}`;
-                } else {
-                    document.getElementById('qr-decoded-result').innerText = 'No QR code found.';
-                }
-            };
-            img.src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-    }
-});
+// document.getElementById('qr-file-input').addEventListener('change', function(event) {
+//     const file = event.target.files[0];
+//     if (file) {
+//         const reader = new FileReader();
+//         reader.onload = function(e) {
+//             const img = new Image();
+//             img.onload = function() {
+//                 const canvas = document.createElement('canvas');
+//                 const context = canvas.getContext('2d');
+//                 canvas.width = img.width;
+//                 canvas.height = img.height;
+//                 context.drawImage(img, 0, 0, img.width, img.height);
+//                 const imageData = context.getImageData(0, 0, img.width, img.height);
+//                 const code = jsQR(imageData.data, imageData.width, imageData.height);
+//                 if (code) {
+//                     document.getElementById('qr-decoded-result').innerText = `Decoded Text: ${code.data}`;
+//                 } else {
+//                     document.getElementById('qr-decoded-result').innerText = 'No QR code found.';
+//                 }
+//             };
+//             img.src = e.target.result;
+//         };
+//         reader.readAsDataURL(file);
+//     }
+// });
 
 // Base64 Encode/Decode
 function base64Encode() {
@@ -496,4 +496,19 @@ function downloadKey(elementId, filename) {
 
 // Automatically show the first tab
 showTab('qr-code');
+
+document.getElementById('theme-toggle').addEventListener('click', function() {
+    const body = document.body;
+    const themeIcon = document.getElementById('theme-icon');
+
+    if (body.classList.contains('day-mode')) {
+        body.classList.remove('day-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    } else {
+        body.classList.add('day-mode');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
+});
 

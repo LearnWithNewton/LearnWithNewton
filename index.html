@@ -28,8 +28,11 @@
                     <span id="time-aus" class="small"></span>
                 </div>
                 <div class="d-flex align-items-center mx-2">
-                    <button id="font-size-decrease" class="btn btn-secondary mr-2">-</button>
-                    <button id="font-size-increase" class="btn btn-secondary">+</button>
+                    <button id="font-size-decrease" class="btn btn-secondary rounded mr-2">-</button>
+                    <button id="font-size-increase" class="btn btn-secondary rounded">+</button>
+                    <button id="theme-toggle" class="btn btn-secondary rounded rounded-circle">
+                        <i id="theme-icon" class="fas fa-sun"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -74,9 +77,9 @@
                     <h2>Base64 Encode/Decode</h2>
                     <textarea id="base64-input" class="form-control"
                         placeholder="Enter text to encode/decode"></textarea>
-                    <button class="btn btn-primary my-2" onclick="base64Encode()">Encode</button>
-                    <button class="btn btn-secondary my-2" onclick="base64Decode()">Decode</button>
-                    <button class="btn btn-success my-3" onclick="copyBase64ToClipboard()"><i
+                    <button class="btn btn-primary rounded my-2" onclick="base64Encode()">Encode</button>
+                    <button class="btn btn-secondary rounded my-2" onclick="base64Decode()">Decode</button>
+                    <button class="btn btn-success rounded my-3" onclick="copyBase64ToClipboard()"><i
                             class="fas fa-copy"></i></button>
                     <span id="base64-message" style="margin-left: 10px;"></span>
                     <div id="base64-result" style="white-space: pre-wrap;"></div>
@@ -91,8 +94,8 @@
                         <option value="SHA-256">SHA-256</option>
                         <option value="SHA-512">SHA-512</option>
                     </select>
-                    <button class="btn btn-primary my-2" onclick="generateHash()">Generate Hash</button>
-                    <button class="btn btn-success my-3" onclick="copyHashToClipboard()"><i
+                    <button class="btn btn-primary rounded my-2" onclick="generateHash()">Generate Hash</button>
+                    <button class="btn btn-success rounded my-3" onclick="copyHashToClipboard()"><i
                             class="fas fa-copy"></i></button>
                     <span id="hash-copy-message" style="margin-left: 10px;"></span>
                     <div id="hash-result" class="my-2" style="white-space: pre-wrap;"></div>
@@ -113,15 +116,15 @@
                         <option value="2048">2048</option>
                         <option value="4096">4096</option>
                     </select>
-                    <button class="btn btn-primary my-2" onclick="generateSSHKeyPair()">Generate Key Pair</button>
+                    <button class="btn btn-primary rounded my-2" onclick="generateSSHKeyPair()">Generate Key Pair</button>
 
                     <div class="row">
                         <div class="col-md-6">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h4>Public Key</h4>
                                 <div>
-                                    <button class="btn btn-success btn-sm mx-1" onclick="copyToClipboard('ssh-public-key-result')"><i class="fas fa-copy"></i></button>
-                                    <button class="btn btn-success btn-sm mx-1"
+                                    <button class="btn btn-success btn-sm rounded mx-1" onclick="copyToClipboard('ssh-public-key-result')"><i class="fas fa-copy"></i></button>
+                                    <button class="btn btn-success btn-sm rounded mx-1"
                                         onclick="downloadKey('ssh-public-key-result', 'public_key.pub')"><i
                                             class="fas fa-download"></i></button>
                                 </div>
@@ -132,8 +135,8 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <h4>Private Key</h4>
                                 <div>
-                                    <button class="btn btn-success btn-sm mx-1" onclick="copyToClipboard('ssh-private-key-result')"><i class="fas fa-copy"></i></button>
-                                    <button class="btn btn-success btn-sm mx-1"
+                                    <button class="btn btn-success btn-sm rounded mx-1" onclick="copyToClipboard('ssh-private-key-result')"><i class="fas fa-copy"></i></button>
+                                    <button class="btn btn-success btn-sm rounded mx-1"
                                         onclick="downloadKey('ssh-private-key-result', 'private_key')"><i
                                             class="fas fa-download"></i></button>
                                 </div>
@@ -145,15 +148,15 @@
                 <div id="markdown" class="tab-content">
                     <h2>Markdown to PDF Converter</h2>
                     <textarea id="markdown-input" class="form-control" placeholder="Enter Markdown text"></textarea>
-                    <button class="btn btn-primary my-2" onclick="convertMarkdownToPDF()">Convert to PDF</button>
+                    <button class="btn btn-primary rounded my-2" onclick="convertMarkdownToPDF()">Convert to PDF</button>
                     <div id="markdown-result"></div>
                 </div>
 
                 <div id="json-xml" class="tab-content">
                     <h2>JSON to XML Converter</h2>
                     <textarea id="json-input" class="form-control" placeholder="Enter JSON"></textarea>
-                    <button class="btn btn-primary my-2" onclick="convertJSONToXML()">Convert to XML</button>
-                    <button class="btn btn-success my-3" onclick="copyXMLToClipboard()"><i
+                    <button class="btn btn-primary rounded my-2" onclick="convertJSONToXML()">Convert to XML</button>
+                    <button class="btn btn-success rounded my-3" onclick="copyXMLToClipboard()"><i
                             class="fas fa-copy"></i></button>
                     <span id="xml-message" style="margin-left: 10px;"></span>
                     <div id="json-xml-result" style="white-space: pre-wrap;"></div>
@@ -162,8 +165,8 @@
                 <div id="xml-json" class="tab-content">
                     <h2>XML to JSON Converter</h2>
                     <textarea id="xml-input" class="form-control" placeholder="Enter XML"></textarea>
-                    <button class="btn btn-primary my-2" onclick="convertXMLToJSON()">Convert to JSON</button>
-                    <button class="btn btn-success my-3" onclick="copyJSONToClipboard()"><i
+                    <button class="btn btn-primary rounded my-2" onclick="convertXMLToJSON()">Convert to JSON</button>
+                    <button class="btn btn-success rounded my-3" onclick="copyJSONToClipboard()"><i
                             class="fas fa-copy"></i></button>
                     <span id="json-message" style="margin-left: 10px;"></span>
                     <div id="xml-json-result" style="white-space: pre-wrap;"></div>
@@ -172,8 +175,8 @@
                 <div id="jwt" class="tab-content">
                     <h2>JWT Decoder</h2>
                     <input type="text" id="jwt-input" class="form-control" placeholder="Enter JWT">
-                    <button class="btn btn-primary my-2" onclick="decodeJWT()">Decode JWT</button>
-                    <button class="btn btn-success my-3" onclick="copyDecodedJWTtext()"><i
+                    <button class="btn btn-primary rounded my-2" onclick="decodeJWT()">Decode JWT</button>
+                    <button class="btn btn-success rounded my-3" onclick="copyDecodedJWTtext()"><i
                             class="fas fa-copy"></i></button>
                     <span id="jwt-message" style="margin-left: 10px;"></span>
                     <div id="jwt-result" style="white-space: pre-wrap;"></div>
@@ -182,27 +185,38 @@
                 <div id="json-viewer" class="tab-content">
                     <h2>JSON Structure Viewer</h2>
                     <textarea id="json-viewer-input" class="form-control" placeholder="Enter JSON"></textarea>
-                    <button class="btn btn-primary my-2" onclick="viewJSONStructure()">View Structure</button>
+                    <button class="btn btn-primary rounded my-2" onclick="viewJSONStructure()">View Structure</button>
                     <div id="json-viewer-result" class="json-viewer-result"></div>
                 </div>
 
                 <div id="color-picker" class="tab-content">
-                    <h2>Color Picker</h2>
-                    <input type="color" id="color-input" class="form-control my-2">
-                    <button class="btn btn-primary my-2" onclick="copyColorCode('hex')"><i
-                            class="fas fa-copy"></i></button>
-                    <button class="btn btn-secondary my-2" onclick="copyColorCode('rgb')"><i
-                            class="fas fa-copy"></i></button>
-                    <div id="color-result" class="my-2"></div>
-                    <h3>RGB to HEX Converter</h3>
-                    <input type="text" id="rgb-input" class="form-control my-2"
-                        placeholder="Enter RGB (e.g., rgb(255, 0, 0))">
-                    <button class="btn btn-primary my-2" onclick="convertRGBToHex()">Convert to HEX</button>
-                    <div id="rgb-to-hex-result" class="my-2"></div>
-                    <h3>HEX to RGB Converter</h3>
-                    <input type="text" id="hex-input" class="form-control my-2" placeholder="Enter HEX (e.g., #ff0000)">
-                    <button class="btn btn-primary my-2" onclick="convertHexToRGB()">Convert to RGB</button>
-                    <div id="hex-to-rgb-result" class="my-2"></div>
+                    <h2>Colors</h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h4>Color Picker</h4>
+                            <input type="color" id="color-input" class="form-control my-2">
+                            <div>
+                                <button class="btn btn-primary rounded btn-sm my-2" onclick="copyColorCode('hex')"><i
+                                        class="fas fa-copy"></i> HEX Code</button>
+                                <button class="btn btn-secondary rounded btn-sm my-2" onclick="copyColorCode('rgb')"><i
+                                        class="fas fa-copy"></i> RGB Code</button>
+                            </div>
+                            <div id="color-result" class="my-2"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>RGB to HEX Converter</h4>
+                            <input type="text" id="rgb-input" class="form-control my-2"
+                                placeholder="Enter RGB (e.g., rgb(255, 0, 0))">
+                            <button class="btn btn-primary rounded btn-sm my-2" onclick="convertRGBToHex()">Convert to HEX</button>
+                            <div id="rgb-to-hex-result" class="my-2"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>HEX to RGB Converter</h4>
+                            <input type="text" id="hex-input" class="form-control my-2" placeholder="Enter HEX (e.g., #ff0000)">
+                            <button class="btn btn-primary rounded btn-sm my-2" onclick="convertHexToRGB()">Convert to RGB</button>
+                            <div id="hex-to-rgb-result" class="my-2"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="about" class="tab-content">
