@@ -12,23 +12,17 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    // function showTime(region) {
-    //     const regions = ['IST', 'UK', 'AUS'];
-    //     regions.forEach(r => {
-    //         document.getElementById(`time-${r.toLowerCase()}`).style.display = (r === region) ? 'block' : 'none';
-    //     });
-    // }
-
     function updateTime() {
         const now = new Date();
-        const options = { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-        document.getElementById('time-ist').innerText = now.toLocaleTimeString('en-US', options);
 
-        options.timeZone = 'Europe/London';
-        document.getElementById('time-uk').innerText = now.toLocaleTimeString('en-US', options);
+        const optionsIST = { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', second: '2-digit', day: '2-digit', month: 'short', year: 'numeric' };
+        document.getElementById('time-ist').innerText = now.toLocaleString('en-US', optionsIST);
 
-        options.timeZone = 'Australia/Sydney';
-        document.getElementById('time-aus').innerText = now.toLocaleTimeString('en-US', options);
+        const optionsUK = { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', second: '2-digit', day: '2-digit', month: 'short', year: 'numeric' };
+        document.getElementById('time-uk').innerText = now.toLocaleString('en-US', optionsUK);
+
+        const optionsAUS = { timeZone: 'Australia/Sydney', hour: '2-digit', minute: '2-digit', second: '2-digit', day: '2-digit', month: 'short', year: 'numeric' };
+        document.getElementById('time-aus').innerText = now.toLocaleString('en-US', optionsAUS);
     }
 
     // Initialize the time display
