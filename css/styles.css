@@ -4,6 +4,11 @@
     margin-right: 5px;
 }
 
+#qr-decoded-result {
+    color: #f8f9fa;
+    margin-top: 10px;
+}
+
 #time-ist, #time-uk, #time-aus {
     font-size: 1.5rem;
     color: #f8f9fa;

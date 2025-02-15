@@ -48,6 +48,32 @@ function generateQRCode() {
 	});
 }
 
+document.getElementById('qr-file-input').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const img = new Image();
+            img.onload = function() {
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                context.drawImage(img, 0, 0, img.width, img.height);
+                const imageData = context.getImageData(0, 0, img.width, img.height);
+                const code = jsQR(imageData.data, imageData.width, imageData.height);
+                if (code) {
+                    document.getElementById('qr-decoded-result').innerText = `Decoded Text: ${code.data}`;
+                } else {
+                    document.getElementById('qr-decoded-result').innerText = 'No QR code found.';
+                }
+            };
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
 // Base64 Encode/Decode
 function base64Encode() {
     const input = document.getElementById('base64-input').value;

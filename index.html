@@ -47,16 +47,18 @@
             </nav>
             <main class="col-md-9">
 				<div id="qr-code" class="tab-content active">
-					<h2>Text to QR Code</h2>
-					<div class="row">
-						<div class="col-md-6">
-							<textarea id="qr-input" class="form-control" placeholder="Enter text"></textarea>
-						</div>
-						<div class="col-md-6">
-							<div id="qr-result"></div>
-						</div>
-					</div>
-				</div>
+                    <h2>QR Coder Decoder</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <textarea id="qr-input" class="form-control" placeholder="Enter text"></textarea>
+                            <input type="file" id="qr-file-input" class="form-control my-2" accept="image/*">
+                        </div>
+                        <div class="col-md-6">
+                            <div id="qr-result"></div>
+                            <div id="qr-decoded-result" class="mt-2"></div>
+                        </div>
+                    </div>
+                </div>
 				<div id="base64" class="tab-content">
 					<h2>Base64 Encode/Decode</h2>
 					<textarea id="base64-input" class="form-control" placeholder="Enter text to encode/decode"></textarea>
@@ -172,7 +174,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.10.0/forge.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsqr/1.4.0/jsQR.min.js"></script>
+
     <script src="./js/script.js"></script>
 
 </body>
 </html>
+
