@@ -113,11 +113,28 @@ function base64Decode() {
 
 function copyToClipboard() {
     const result = document.getElementById('base64-result').innerText;
-    navigator.clipboard.writeText(result).then(() => {
-        document.getElementById('copy-message').innerText = 'Copied to clipboard!';
-    }).catch(err => {
-        console.error('Failed to copy: ', err);
-    });
+    if (result) {
+        navigator.clipboard.writeText(result).then(() => {
+            document.getElementById('copy-message').innerText = 'Copied to clipboard!';
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    } else {
+        document.getElementById('copy-message').innerText = 'Nothing to copy!';
+    }
+}
+
+function copyBase64ToClipboard() {
+    const result = document.getElementById('base64-result').innerText;
+    if (result) {
+        navigator.clipboard.writeText(result).then(() => {
+            document.getElementById('copy-message').innerText = 'Copied to clipboard!';
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    } else {
+        document.getElementById('copy-message').innerText = 'Nothing to copy!';
+    }
 }
 
 // Markdown to PDF Conversion (using jsPDF, marked.js, and DOMPurify)
@@ -297,11 +314,15 @@ function generateHash() {
 
 function copyHashToClipboard() {
     const hashResult = document.getElementById('hash-result').innerText;
-    navigator.clipboard.writeText(hashResult).then(() => {
-        document.getElementById('hash-copy-message').innerText = 'Copied to clipboard!';
-    }).catch(err => {
-        console.error('Failed to copy: ', err);
-    });
+    if (hashResult) {
+        navigator.clipboard.writeText(hashResult).then(() => {
+            document.getElementById('hash-copy-message').innerText = 'Copied to clipboard!';
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    } else {
+        document.getElementById('hash-copy-message').innerText = 'Nothing to copy!';
+    }
 }
 
 // SSH Key Pair Generator
@@ -347,11 +368,15 @@ function generateKeyPair(algorithm, bitSize) {
 
 function copyToClipboard(elementId) {
     const result = document.getElementById(elementId).innerText;
-    navigator.clipboard.writeText(result).then(() => {
-        alert('Copied to clipboard!');
-    }).catch(err => {
-        console.error('Failed to copy: ', err);
-    });
+    if (result) {
+        navigator.clipboard.writeText(result).then(() => {
+            alert('Copied to clipboard!');
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    } else {
+        alert('Nothing to copy!');
+    }
 }
 
 function downloadKey(elementId, filename) {
