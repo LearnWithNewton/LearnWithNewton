@@ -18,12 +18,10 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-document.getElementById('font-select').addEventListener('change', function() {
-    document.body.style.fontFamily = this.value;
-});
 
-let fontSize = 15;
-const minFontSize = 12;
+
+let fontSize = 16;
+const minFontSize = 14;
 const maxFontSize = 20;
 
 document.getElementById('font-size-increase').addEventListener('click', function() {
@@ -59,7 +57,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateTime, 1000);
 });
 
-document.getElementById('qr-input').addEventListener('input', generateQRCode);
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('qr-input').addEventListener('input', generateQRCode);
+});
 
 function generateQRCode() {
 	const qrInput = document.getElementById('qr-input').value;

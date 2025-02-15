@@ -5,46 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Utility App</title>
-    <style>
-        body {
-            background-color: #1a1a1a;
-            color: #f8f9fa;
-            font-family: 'Ubuntu', sans-serif;
-        }
-        .nav-link {
-            color: #f8f9fa;
-            transition: color 0.3s ease;
-        }
-        .nav-link:hover, .nav-link.active {
-            color: #ff4d4d;
-            font-weight: bold;
-        }
-        .btn-primary {
-            background-color: #ff4d4d;
-            border-color: #ff4d4d;
-            color: #f8f9fa;
-        }
-        .btn-primary:hover {
-            background-color: #e60000;
-            border-color: #e60000;
-        }
-        .btn-secondary {
-            background-color: #6c757d;
-            border-color: #6c757d;
-            color: #f8f9fa;
-        }
-        .btn-secondary:hover {
-            background-color: #5a6268;
-            border-color: #545b62;
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -64,24 +26,6 @@
                     <span id="time-aus" class="small"></span>
                 </div>
                 <div class="d-flex align-items-center mx-2">
-                    <label for="font-select" class="mr-2">Font:</label>
-                    <select id="font-select" class="form-control mr-2">
-                        <option value="Ubuntu">Ubuntu</option>
-                        <option value="Inter">Inter</option>
-                        <option value="Roboto">Roboto</option>
-                        <option value="Open Sans">Open Sans</option>
-                        <option value="Lato">Lato</option>
-                        <option value="Poppins">Poppins</option>
-                        <option value="Merriweather">Merriweather</option>
-                        <option value="Playfair Display">Playfair Display</option>
-                        <option value="Lora">Lora</option>
-                        <option value="Fira Code">Fira Code</option>
-                        <option value="JetBrains Mono">JetBrains Mono</option>
-                        <option value="Oswald">Oswald</option>
-                        <option value="Raleway">Raleway</option>
-                        <option value="Montserrat">Montserrat</option>
-                        <option value="Anton">Anton</option>
-                    </select>
                     <button id="font-size-decrease" class="btn btn-secondary mr-2">-</button>
                     <button id="font-size-increase" class="btn btn-secondary">+</button>
                 </div>

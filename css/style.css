@@ -1,0 +1,59 @@
+:root {
+    --main-font: 'Merriweather', serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #f8f9fa;
+    font-family: var(--main-font);
+}
+
+.nav-link {
+    color: #f8f9fa;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #ff4d4d;
+    border-color: #ff4d4d;
+    color: #f8f9fa;
+}
+
+.btn-primary:hover {
+    background-color: #e60000;
+    border-color: #e60000;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #f8f9fa;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
