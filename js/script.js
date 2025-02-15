@@ -5,11 +5,40 @@ function showTab(tabId) {
 }
 
 document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function() {
-        showTab(this.getAttribute('href').substring(1));
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.tab-content').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        document.querySelector(this.getAttribute('href')).classList.add('active');
+        document.querySelectorAll('.nav-link').forEach(nav => {
+            nav.classList.remove('active');
+        });
+        this.classList.add('active');
     });
 });
 
+document.getElementById('font-select').addEventListener('change', function() {
+    document.body.style.fontFamily = this.value;
+});
+
+let fontSize = 15;
+const minFontSize = 12;
+const maxFontSize = 20;
+
+document.getElementById('font-size-increase').addEventListener('click', function() {
+    if (fontSize < maxFontSize) {
+        fontSize++;
+        document.body.style.fontSize = fontSize + 'px';
+    }
+});
+
+document.getElementById('font-size-decrease').addEventListener('click', function() {
+    if (fontSize > minFontSize) {
+        fontSize--;
+        document.body.style.fontSize = fontSize + 'px';
+    }
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     function updateTime() {
