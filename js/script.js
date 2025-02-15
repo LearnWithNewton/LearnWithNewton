@@ -59,6 +59,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('qr-input').addEventListener('input', generateQRCode);
+
+    // Generate QR code on page load
+    const initialQrInput = "https://github.com/LearnWithNewton/LearnWithNewton";
+    document.getElementById('qr-input').value = initialQrInput;
+    generateQRCode();
 });
 
 function generateQRCode() {
@@ -111,31 +116,59 @@ function base64Decode() {
     document.getElementById('base64-result').innerText = decoded;
 }
 
-function copyToClipboard() {
-    const result = document.getElementById('base64-result').innerText;
-    if (result) {
-        navigator.clipboard.writeText(result).then(() => {
-            document.getElementById('copy-message').innerText = 'Copied to clipboard!';
-        }).catch(err => {
-            console.error('Failed to copy: ', err);
-        });
-    } else {
-        document.getElementById('copy-message').innerText = 'Nothing to copy!';
-    }
-}
-
 function copyBase64ToClipboard() {
     const result = document.getElementById('base64-result').innerText;
     if (result) {
         navigator.clipboard.writeText(result).then(() => {
-            document.getElementById('copy-message').innerText = 'Copied to clipboard!';
+            document.getElementById('base64-message').innerText = 'Copied!';
         }).catch(err => {
             console.error('Failed to copy: ', err);
         });
     } else {
-        document.getElementById('copy-message').innerText = 'Nothing to copy!';
+        document.getElementById('base64-message').innerText = 'Nothing to copy!';
     }
 }
+
+// function copyToClipboard() {
+//     const result = document.getElementById('base64-result').innerText;
+//     if (result) {
+//         navigator.clipboard.writeText(result).then(() => {
+//             document.getElementById('copy-message').innerText = 'Copied!';
+//         }).catch(err => {
+//             console.error('Failed to copy: ', err);
+//         });
+//     } else {
+//         document.getElementById('copy-message').innerText = 'Nothing to copy!';
+//     }
+// }
+
+function copyXMLToClipboard() {
+    const result = document.getElementById('json-xml-result').innerText;
+    if (result) {
+        navigator.clipboard.writeText(result).then(() => {
+            document.getElementById('xml-message').innerText = 'Copied!';
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    } else {
+        document.getElementById('xml-message').innerText = 'Nothing to copy!';
+    }
+}
+
+function copyJSONToClipboard() {
+    const result = document.getElementById('xml-json-result').innerText;
+    if (result) {
+        navigator.clipboard.writeText(result).then(() => {
+            document.getElementById('json-message').innerText = 'Copied!';
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    } else {
+        document.getElementById('json-message').innerText = 'Nothing to copy!';
+    }
+}
+
+
 
 // Markdown to PDF Conversion (using jsPDF, marked.js, and DOMPurify)
 function convertMarkdownToPDF() {
@@ -177,6 +210,57 @@ function jsonToXML(json) {
     return xml;
 }
 
+// XML to JSON Conversion
+function convertXMLToJSON() {
+    const xmlInput = document.getElementById('xml-input').value;
+    let xmlDoc;
+    try {
+        xmlDoc = new DOMParser().parseFromString(xmlInput, 'text/xml');
+    } catch (e) {
+        document.getElementById('xml-json-result').innerText = 'Invalid XML';
+        return;
+    }
+
+    const json = xmlToJson(xmlDoc);
+    document.getElementById('xml-json-result').innerText = JSON.stringify(json, null, 2);
+}
+
+function xmlToJson(xml) {
+    let obj = {};
+
+    if (xml.nodeType == 1) { // element
+        // do attributes
+        if (xml.attributes.length > 0) {
+            obj["@attributes"] = {};
+            for (let j = 0; j < xml.attributes.length; j++) {
+                let attribute = xml.attributes.item(j);
+                obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+            }
+        }
+    } else if (xml.nodeType == 3) { // text
+        obj = xml.nodeValue;
+    }
+
+    // do children
+    if (xml.hasChildNodes()) {
+        for (let i = 0; i < xml.childNodes.length; i++) {
+            let item = xml.childNodes.item(i);
+            let nodeName = item.nodeName;
+            if (typeof obj[nodeName] == "undefined") {
+                obj[nodeName] = xmlToJson(item);
+            } else {
+                if (typeof obj[nodeName].push == "undefined") {
+                    let old = obj[nodeName];
+                    obj[nodeName] = [];
+                    obj[nodeName].push(old);
+                }
+                obj[nodeName].push(xmlToJson(item));
+            }
+        }
+    }
+    return obj;
+}
+
 // JWT Decoder
 function decodeJWT() {
     const jwtInput = document.getElementById('jwt-input').value;
@@ -187,6 +271,19 @@ function decodeJWT() {
     }
     const payload = JSON.parse(atob(parts[1]));
     document.getElementById('jwt-result').innerText = JSON.stringify(payload, null, 2);
+}
+
+function copyDecodedJWTtext() {
+    const result = document.getElementById('jwt-result').innerText;
+    if (result) {
+        navigator.clipboard.writeText(result).then(() => {
+            document.getElementById('jwt-message').innerText = 'Copied!';
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    } else {
+        document.getElementById('jwt-message').innerText = 'Nothing to copy!';
+    }
 }
 
 // JSON Structure Viewer
@@ -316,7 +413,7 @@ function copyHashToClipboard() {
     const hashResult = document.getElementById('hash-result').innerText;
     if (hashResult) {
         navigator.clipboard.writeText(hashResult).then(() => {
-            document.getElementById('hash-copy-message').innerText = 'Copied to clipboard!';
+            document.getElementById('hash-copy-message').innerText = 'Copied!';
         }).catch(err => {
             console.error('Failed to copy: ', err);
         });
@@ -333,6 +430,11 @@ function generateSSHKeyPair() {
 
     document.getElementById('ssh-public-key-result').innerText = keyPair.publicKey;
     document.getElementById('ssh-private-key-result').innerText = keyPair.privateKey;
+
+    // Show the copy and download buttons
+    document.querySelectorAll('#ssh-key-generator .d-flex button').forEach(button => {
+        button.style.display = 'inline-block';
+    });
 }
 
 function generateKeyPair(algorithm, bitSize) {
@@ -370,7 +472,7 @@ function copyToClipboard(elementId) {
     const result = document.getElementById(elementId).innerText;
     if (result) {
         navigator.clipboard.writeText(result).then(() => {
-            alert('Copied to clipboard!');
+            alert('Copied!');
         }).catch(err => {
             console.error('Failed to copy: ', err);
         });

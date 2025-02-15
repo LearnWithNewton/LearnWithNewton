@@ -57,3 +57,15 @@ body {
     vertical-align: middle;
     margin-right: 5px;
 }
+
+[id$="-result"] {
+    word-wrap: break-word;
+    border: 1px solid #ff4d4d; /* Red border */
+    padding: 10px; /* Add some padding */
+    border-radius: 5px; /* Optional: round the corners */
+    margin-top: 5px; /* Add some margin */
+}
+
+#ssh-key-generator .d-flex button {
+    display: none;
+}

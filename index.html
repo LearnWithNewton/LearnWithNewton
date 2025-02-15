@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Utility App</title>
 </head>
+
 <body>
     <div class="container">
         <div class="d-flex justify-content-between align-items-center my-4">
@@ -31,46 +33,55 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="row">
             <nav class="col-md-3 sidebar">
                 <ul class="nav flex-column">
-                    <li class="nav-item"><a class="nav-link active" href="#qr-code"><i class="fas fa-qrcode"></i> Text to QR Code</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#base64"><i class="fas fa-code"></i> Base64 Encode/Decode</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#hash-generator"><i class="fas fa-lock"></i> Hash Generator</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#ssh-key-generator"><i class="fas fa-key"></i> SSH Key Generator</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#qr-code"><i class="fas fa-qrcode"></i> Text
+                            to QR Code</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#base64"><i class="fas fa-code"></i> Base64
+                            Encode/Decode</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hash-generator"><i class="fas fa-lock"></i> Hash
+                            Generator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ssh-key-generator"><i class="fas fa-key"></i> SSH
+                            Key Generator</a></li>
                     <li class="nav-item"><a class="nav-link" href="#jwt"><i class="fas fa-key"></i> JWT Decoder</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#json-xml"><i class="fas fa-exchange-alt"></i> JSON/XML Converter</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#color-picker"><i class="fas fa-palette"></i> Color Picker</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#markdown"><i class="fas fa-file-pdf"></i> Markdown to PDF</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#json-viewer"><i class="fas fa-sitemap"></i> JSON Structure Viewer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#json-xml"><i class="fas fa-exchange-alt"></i>
+                            JSON/XML Converter</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#xml-json"><i class="fas fa-exchange-alt"></i>
+                            XML/JSON Converter</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#color-picker"><i class="fas fa-palette"></i> Color
+                            Picker</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#markdown"><i class="fas fa-file-pdf"></i> Markdown
+                            to PDF</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#json-viewer"><i class="fas fa-sitemap"></i> JSON
+                            Structure Viewer</a></li>
                     <!-- <li class="nav-item"><a class="nav-link" href="#about"><i class="fas fa-info-circle"></i>About</a></li> -->
                 </ul>
             </nav>
             <main class="col-md-9">
-				<div id="qr-code" class="tab-content active">
+                <div id="qr-code" class="tab-content active">
                     <h2>QR Coder Decoder</h2>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <textarea id="qr-input" class="form-control" placeholder="Enter text"></textarea>
-                            <!-- <input type="file" id="qr-file-input" class="form-control my-2" accept="image/*"> -->
-                        </div>
-                        <div class="col-md-6">
-                            <div id="qr-result"></div>
-                            <!-- <div id="qr-decoded-result" class="mt-2"></div> -->
-                        </div>
-                    </div>
+
+                    <textarea id="qr-input" class="form-control" placeholder="Enter text"></textarea>
+                    <!-- <input type="file" id="qr-file-input" class="form-control my-2" accept="image/*"> -->
+
+                    <div id="qr-result"></div>
+                    <!-- <div id="qr-decoded-result" class="mt-2"></div> -->
+
                 </div>
-				<div id="base64" class="tab-content">
-					<h2>Base64 Encode/Decode</h2>
-					<textarea id="base64-input" class="form-control" placeholder="Enter text to encode/decode"></textarea>
-					<button class="btn btn-primary my-2" onclick="base64Encode()">Encode</button>
-					<button class="btn btn-secondary my-2" onclick="base64Decode()">Decode</button>
-                    <button class="btn btn-success my-3" onclick="copyBase64ToClipboard()"><i class="fas fa-copy"></i></button>
-                    <span id="copy-message" style="margin-left: 10px;"></span>
-					<div id="base64-result" style="white-space: pre-wrap;"></div>					
-					
-				</div>
+                <div id="base64" class="tab-content">
+                    <h2>Base64 Encode/Decode</h2>
+                    <textarea id="base64-input" class="form-control"
+                        placeholder="Enter text to encode/decode"></textarea>
+                    <button class="btn btn-primary my-2" onclick="base64Encode()">Encode</button>
+                    <button class="btn btn-secondary my-2" onclick="base64Decode()">Decode</button>
+                    <button class="btn btn-success my-3" onclick="copyBase64ToClipboard()"><i
+                            class="fas fa-copy"></i></button>
+                    <span id="base64-message" style="margin-left: 10px;"></span>
+                    <div id="base64-result" style="white-space: pre-wrap;"></div>
+
+                </div>
                 <div id="hash-generator" class="tab-content">
                     <h2>Hash Generator</h2>
                     <textarea id="hash-input" class="form-control" placeholder="Enter text to hash"></textarea>
@@ -78,16 +89,18 @@
                         <option value="MD5">MD5</option>
                         <option value="SHA-1">SHA-1</option>
                         <option value="SHA-256">SHA-256</option>
-                        <option value="SHA-512">SHA-512</option>            
+                        <option value="SHA-512">SHA-512</option>
                     </select>
                     <button class="btn btn-primary my-2" onclick="generateHash()">Generate Hash</button>
-                    <div id="hash-result" class="my-2" style="white-space: pre-wrap;"></div>
-                    <button class="btn btn-success my-3" onclick="copyHashToClipboard()"><i class="fas fa-copy"></i></button>
+                    <button class="btn btn-success my-3" onclick="copyHashToClipboard()"><i
+                            class="fas fa-copy"></i></button>
                     <span id="hash-copy-message" style="margin-left: 10px;"></span>
+                    <div id="hash-result" class="my-2" style="white-space: pre-wrap;"></div>
                 </div>
                 <div id="ssh-key-generator" class="tab-content">
                     <h2>SSH Key Pair Generator</h2>
-                    <textarea id="ssh-key-input" class="form-control" placeholder="Enter text for key generation"></textarea>
+                    <textarea id="ssh-key-input" class="form-control"
+                        placeholder="Enter text for key generation"></textarea>
                     <select id="ssh-algorithm" class="form-control my-2">
                         <option value="RSA">RSA</option>
                         <option value="RSA-SSH2">RSA SSH-2</option>
@@ -96,16 +109,38 @@
                         <option value="ED25519">ED25519</option>
                     </select>
                     <select id="ssh-bit-size" class="form-control my-2">
+                        <option value="1024">1024</option>
                         <option value="2048">2048</option>
                         <option value="4096">4096</option>
                     </select>
                     <button class="btn btn-primary my-2" onclick="generateSSHKeyPair()">Generate Key Pair</button>
-                    <div id="ssh-public-key-result" class="my-2" style="white-space: pre-wrap;"></div>
-                    <button class="btn btn-success my-3" onclick="copyToClipboard('ssh-public-key-result')"><i class="fas fa-copy"></i></button>
-                    <button class="btn btn-success my-3" onclick="downloadKey('ssh-public-key-result', 'public_key.pub')"><i class="fas fa-download"></i></button>
-                    <div id="ssh-private-key-result" class="my-2" style="white-space: pre-wrap;"></div>
-                    <button class="btn btn-success my-3" onclick="copyToClipboard('ssh-private-key-result')"><i class="fas fa-copy"></i></button>
-                    <button class="btn btn-success my-3" onclick="downloadKey('ssh-private-key-result', 'private_key')"><i class="fas fa-download"></i></button>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4>Public Key</h4>
+                                <div>
+                                    <button class="btn btn-success btn-sm mx-1" onclick="copyToClipboard('ssh-public-key-result')"><i class="fas fa-copy"></i></button>
+                                    <button class="btn btn-success btn-sm mx-1"
+                                        onclick="downloadKey('ssh-public-key-result', 'public_key.pub')"><i
+                                            class="fas fa-download"></i></button>
+                                </div>
+                            </div>
+                            <div id="ssh-public-key-result" class="my-2" style="white-space: pre-wrap;"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4>Private Key</h4>
+                                <div>
+                                    <button class="btn btn-success btn-sm mx-1" onclick="copyToClipboard('ssh-private-key-result')"><i class="fas fa-copy"></i></button>
+                                    <button class="btn btn-success btn-sm mx-1"
+                                        onclick="downloadKey('ssh-private-key-result', 'private_key')"><i
+                                            class="fas fa-download"></i></button>
+                                </div>
+                            </div>
+                            <div id="ssh-private-key-result" class="my-2" style="white-space: pre-wrap;"></div>
+                        </div>
+                    </div>
                 </div>
                 <div id="markdown" class="tab-content">
                     <h2>Markdown to PDF Converter</h2>
@@ -118,17 +153,30 @@
                     <h2>JSON to XML Converter</h2>
                     <textarea id="json-input" class="form-control" placeholder="Enter JSON"></textarea>
                     <button class="btn btn-primary my-2" onclick="convertJSONToXML()">Convert to XML</button>
-					<div id="json-xml-result" style="white-space: pre-wrap;"></div>
-					<button class="btn btn-success my-3" onclick="copyToClipboard()"><i class="fas fa-copy"></i></button>
-					<span id="copy-message" style="margin-left: 10px;"></span>
-                    <!-- <div id="json-xml-result"></div> -->
+                    <button class="btn btn-success my-3" onclick="copyXMLToClipboard()"><i
+                            class="fas fa-copy"></i></button>
+                    <span id="xml-message" style="margin-left: 10px;"></span>
+                    <div id="json-xml-result" style="white-space: pre-wrap;"></div>
+                </div>
+
+                <div id="xml-json" class="tab-content">
+                    <h2>XML to JSON Converter</h2>
+                    <textarea id="xml-input" class="form-control" placeholder="Enter XML"></textarea>
+                    <button class="btn btn-primary my-2" onclick="convertXMLToJSON()">Convert to JSON</button>
+                    <button class="btn btn-success my-3" onclick="copyJSONToClipboard()"><i
+                            class="fas fa-copy"></i></button>
+                    <span id="json-message" style="margin-left: 10px;"></span>
+                    <div id="xml-json-result" style="white-space: pre-wrap;"></div>
                 </div>
 
                 <div id="jwt" class="tab-content">
                     <h2>JWT Decoder</h2>
                     <input type="text" id="jwt-input" class="form-control" placeholder="Enter JWT">
                     <button class="btn btn-primary my-2" onclick="decodeJWT()">Decode JWT</button>
-                    <div id="jwt-result"></div>
+                    <button class="btn btn-success my-3" onclick="copyDecodedJWTtext()"><i
+                            class="fas fa-copy"></i></button>
+                    <span id="jwt-message" style="margin-left: 10px;"></span>
+                    <div id="jwt-result" style="white-space: pre-wrap;"></div>
                 </div>
 
                 <div id="json-viewer" class="tab-content">
@@ -141,11 +189,14 @@
                 <div id="color-picker" class="tab-content">
                     <h2>Color Picker</h2>
                     <input type="color" id="color-input" class="form-control my-2">
-                    <button class="btn btn-primary my-2" onclick="copyColorCode('hex')"><i class="fas fa-copy"></i></button>
-                    <button class="btn btn-secondary my-2" onclick="copyColorCode('rgb')"><i class="fas fa-copy"></i></button>
+                    <button class="btn btn-primary my-2" onclick="copyColorCode('hex')"><i
+                            class="fas fa-copy"></i></button>
+                    <button class="btn btn-secondary my-2" onclick="copyColorCode('rgb')"><i
+                            class="fas fa-copy"></i></button>
                     <div id="color-result" class="my-2"></div>
                     <h3>RGB to HEX Converter</h3>
-                    <input type="text" id="rgb-input" class="form-control my-2" placeholder="Enter RGB (e.g., rgb(255, 0, 0))">
+                    <input type="text" id="rgb-input" class="form-control my-2"
+                        placeholder="Enter RGB (e.g., rgb(255, 0, 0))">
                     <button class="btn btn-primary my-2" onclick="convertRGBToHex()">Convert to HEX</button>
                     <div id="rgb-to-hex-result" class="my-2"></div>
                     <h3>HEX to RGB Converter</h3>
@@ -156,17 +207,28 @@
 
                 <div id="about" class="tab-content">
                     <h2>About</h2>
-                    <p>Welcome to the <strong>Utility App</strong>! This web application offers a variety of tools to make your life easier:</p>
+                    <p>Welcome to the <strong>Utility App</strong>! This web application offers a variety of tools to
+                        make your life easier:</p>
                     <ul>
-                        <li><a class="nav-link" href="#qr-code"><i class="fas fa-qrcode"></i> <strong>Text to QR Code</strong></a> - Convert any text into a QR code instantly. 📱</li>
-                        <li><a class="nav-link" href="#base64"><i class="fas fa-code"></i> <strong>Base64 Encode/Decode</strong></a> - Encode or decode text using Base64. 🔐</li>
-                        <li><a class="nav-link" href="#hash-generator"><i class="fas fa-lock"></i> <strong>Hash Generator</strong></a> - Generate hashes using various algorithms like MD5, SHA-1, SHA-256, and SHA-512. 🔒</li>
-                        <li><a class="nav-link" href="#ssh-key-generator"><i class="fas fa-key"></i> <strong>SSH Key Generator</strong></a> - Generate SSH key pairs for secure communication. 🔑</li>
-                        <li><a class="nav-link" href="#markdown"><i class="fas fa-file-pdf"></i> <strong>Markdown to PDF</strong></a> - Convert your Markdown text to a PDF document. 📄</li>
-                        <li><a class="nav-link" href="#json-xml"><i class="fas fa-exchange-alt"></i> <strong>JSON/XML Converter</strong></a> - Convert JSON data to XML format and vice versa. 🔄</li>
-                        <li><a class="nav-link" href="#jwt"><i class="fas fa-key"></i> <strong>JWT Decoder</strong></a> - Decode JSON Web Tokens (JWT) to view their contents. 🛡️</li>
-                        <li><a class="nav-link" href="#json-viewer"><i class="fas fa-sitemap"></i> <strong>JSON Structure Viewer</strong></a> - Visualize the structure of your JSON data. 🌐</li>
-                        <li><a class="nav-link" href="#color-picker"><i class="fas fa-palette"></i> <strong>Color Picker</strong></a> - Pick colors and convert between RGB and HEX formats. 🎨</li>
+                        <li><a class="nav-link" href="#qr-code"><i class="fas fa-qrcode"></i> <strong>Text to QR
+                                    Code</strong></a> - Convert any text into a QR code instantly. 📱</li>
+                        <li><a class="nav-link" href="#base64"><i class="fas fa-code"></i> <strong>Base64
+                                    Encode/Decode</strong></a> - Encode or decode text using Base64. 🔐</li>
+                        <li><a class="nav-link" href="#hash-generator"><i class="fas fa-lock"></i> <strong>Hash
+                                    Generator</strong></a> - Generate hashes using various algorithms like MD5, SHA-1,
+                            SHA-256, and SHA-512. 🔒</li>
+                        <li><a class="nav-link" href="#ssh-key-generator"><i class="fas fa-key"></i> <strong>SSH Key
+                                    Generator</strong></a> - Generate SSH key pairs for secure communication. 🔑</li>
+                        <li><a class="nav-link" href="#markdown"><i class="fas fa-file-pdf"></i> <strong>Markdown to
+                                    PDF</strong></a> - Convert your Markdown text to a PDF document. 📄</li>
+                        <li><a class="nav-link" href="#json-xml"><i class="fas fa-exchange-alt"></i> <strong>JSON/XML
+                                    Converter</strong></a> - Convert JSON data to XML format and vice versa. 🔄</li>
+                        <li><a class="nav-link" href="#jwt"><i class="fas fa-key"></i> <strong>JWT Decoder</strong></a>
+                            - Decode JSON Web Tokens (JWT) to view their contents. 🛡️</li>
+                        <li><a class="nav-link" href="#json-viewer"><i class="fas fa-sitemap"></i> <strong>JSON
+                                    Structure Viewer</strong></a> - Visualize the structure of your JSON data. 🌐</li>
+                        <li><a class="nav-link" href="#color-picker"><i class="fas fa-palette"></i> <strong>Color
+                                    Picker</strong></a> - Pick colors and convert between RGB and HEX formats. 🎨</li>
                     </ul>
                     <p>Explore these features and enhance your productivity with our Utility App! 🚀</p>
                 </div>
@@ -175,7 +237,8 @@
     </div>
     <footer class="text-center mt-4">
         <p>&copy; 2025 Utility App. All rights reserved.</p>
-        <p>View the source code on <a href="https://github.com/LearnWithNewton/LearnWithNewton" target="_blank"><i class="fab fa-github"></i> GitHub</a></p>
+        <p>View the source code on <a href="https://github.com/LearnWithNewton/LearnWithNewton" target="_blank"><i
+                    class="fab fa-github"></i> GitHub</a></p>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.4/purify.min.js"></script>
@@ -187,5 +250,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsqr/1.4.0/jsQR.min.js"></script>
     <script src="./js/script.js"></script>
 </body>
-</html>
 
+</html>
