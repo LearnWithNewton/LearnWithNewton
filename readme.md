@@ -18,6 +18,7 @@
                     <p><a href="https://toolsetapp.streamlit.app/">Prompt Collector App & More</a></p>
                     <p><a href="https://advice-reactapp.netlify.app/">Simple Quote Generator React App</a></p>
                     <p><a href="https://github.com/marketplace/actions/podcast-generator-workflow">Podcast Generator Workflow</a></p>
+                    <p><a href="https://learnwithnewton.github.io/LearnWithNewton">JavaScript based Utility App</a></p>
                 <h2>🏆 Certifications</h2>
                     <a href="https://www.credly.com/badges/a95239f5-64f7-4e74-853c-164c2f781912">LFQ101:
                             Fundamentals of Quantum Computing</a><br>
